@@ -1,20 +1,22 @@
 require('dotenv').config();
 const mongoose = require('mongoose');
 const encrypt = require("mongoose-encryption");
+const findOrCreate = require('mongoose-find-or-create')
 
 const Schema = mongoose.Schema;
 const RegisterSchema = new Schema({
 
   email: {
     type: String,
-    required: true,
+  
   },
   password: {
     type: String,
-    required: true,
+   
   }
 });
 
+RegisterSchema.plugin(findOrCreate)
 // encryption.....
 
 //  RegisterSchema.plugin(encrypt, { secret: process.env.SECRET, encryptedFields: ["password"] });
