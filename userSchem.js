@@ -13,6 +13,13 @@ const RegisterSchema = new Schema({
   password: {
     type: String,
    
+  },
+  googleId: {
+    type: String,
+  },
+  secret: {
+    type: String,
+   
   }
 });
 
